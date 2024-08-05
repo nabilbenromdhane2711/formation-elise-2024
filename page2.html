@@ -1,0 +1,73 @@
+<html><head><title></title>
+<script language="JavaScript">
+<!--
+
+var numQues = 1;
+var numChoi = 9;
+
+var answers = new Array(1);
+answers[0] = "    - **المراسلة**: كل وثيقة تنشؤها الهياكل العمومية أو تتحصل عليها., مراسلة واردة**: كل مراسلة واردة من خارج الهيكل ., تسجيل المراسلات السرية حسب محتويات الظرف الخارجي, مطلب العطلة من الوثائق الخاضعة للتبادل الإلكتروني والورقي , ";
+
+function getScore(form) {
+  var score = 0;
+  var currElt;
+  var currSelection;
+  var bon = false;
+
+  for (i=0; i<numQues; i++) {
+    currElt = i*numChoi;
+    bon=false;
+    for (j=0; j<numChoi; j++) {
+      currSelection = form.elements[currElt + j];
+      if ((currSelection.checked)&&(answers[i].indexOf(currSelection.value) != -1)) {
+        bon=true;}
+      if ((currSelection.checked)&&(answers[i].indexOf(currSelection.value) == -1)) {
+        bon=false;
+        break;
+        }
+      if (!(currSelection.checked)&&(answers[i].indexOf(currSelection.value) != -1)) {
+        bon=false;
+        break;
+        }
+    }
+    if (bon==true) {score++}
+  }
+
+  score = Math.round(score/numQues*100);
+  form.percentage.value = score + "%";
+
+  var correctAnswers = "";
+  for (i=1; i<=numQues; i++) {
+    correctAnswers += i + ". " + answers[i-1] + "\r\n";
+  }
+  form.solutions.value = correctAnswers;
+
+}
+
+// -->
+</script>
+</head>
+
+<body>
+
+<form name="quiz">
+<b>1. - تعريف المصطلحات الأساسية:أختار التعريفات الصحيحة</b><br>
+<input type="checkbox" name="q1" value="    - **المراسلة**: كل وثيقة ترسلها الهياكل العمومية.">    - **المراسلة**: كل وثيقة ترسلها الهياكل العمومية.<br>
+<input type="checkbox" name="q1" value="    - **المراسلة**: كل وثيقة تودع بمكتب ضبط تابع  لهيكل عمومي ">    - **المراسلة**: كل وثيقة تودع بمكتب ضبط تابع  لهيكل عمومي <br>
+<input type="checkbox" name="q1" value="    - **المراسلة**: كل وثيقة تنشؤها الهياكل العمومية أو تتحصل عليها.">    - **المراسلة**: كل وثيقة تنشؤها الهياكل العمومية أو تتحصل عليها.<br>
+<input type="checkbox" name="q1" value="مراسلة واردة**: كل مراسلة واردة من خارج الادارة .">مراسلة واردة**: كل مراسلة واردة من خارج الادارة .<br>
+<input type="checkbox" name="q1" value="مراسلة واردة**: كل مراسلة واردة من خارج الهيكل .">مراسلة واردة**: كل مراسلة واردة من خارج الهيكل .<br>
+<input type="checkbox" name="q1" value="تسجيل المراسلات السرية بعد فتح  الظرف الخارجي">تسجيل المراسلات السرية بعد فتح  الظرف الخارجي<br>
+<input type="checkbox" name="q1" value="تسجيل المراسلات السرية حسب محتويات الظرف الخارجي">تسجيل المراسلات السرية حسب محتويات الظرف الخارجي<br>
+<input type="checkbox" name="q1" value="مطلب عطلة ليس من الوثائق الخاضعة للتبادل الإلكتروني والورقي ">مطلب عطلة ليس من الوثائق الخاضعة للتبادل الإلكتروني والورقي <br>
+<input type="checkbox" name="q1" value="مطلب العطلة من الوثائق الخاضعة للتبادل الإلكتروني والورقي ">مطلب العطلة من الوثائق الخاضعة للتبادل الإلكتروني والورقي <br>
+<p>
+
+<input type="button" value="Score" onClick="getScore(this.form)">
+<input type="reset" value="RAZ"><p>
+Score = <input type=text size=15 name="percentage"><br>
+Réponses correctes :<br>
+<textarea name="solutions" wrap="virtual" rows="4" cols="40"></textarea>
+</form>
+
+</body></html>
