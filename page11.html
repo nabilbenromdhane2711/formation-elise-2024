@@ -1,0 +1,88 @@
+<html><head><title></title>
+<script language="JavaScript">
+<!--
+
+var numQues = 4;
+var numChoi = 3;
+
+var answers = new Array(4);
+answers[0] = "Pour organiser et structurer les données, ";
+answers[1] = "Outils de tri, filtrage et recherche performants, Facilité à gérer de grandes quantités de données, ";
+answers[2] = "Des ventes mensuelles avec les quantités vendues, ";
+answers[3] = "Problèmes de compatibilité avec d'autres logiciels, ";
+
+function getScore(form) {
+  var score = 0;
+  var currElt;
+  var currSelection;
+  var bon = false;
+
+  for (i=0; i<numQues; i++) {
+    currElt = i*numChoi;
+    bon=false;
+    for (j=0; j<numChoi; j++) {
+      currSelection = form.elements[currElt + j];
+      if ((currSelection.checked)&&(answers[i].indexOf(currSelection.value) != -1)) {
+        bon=true;}
+      if ((currSelection.checked)&&(answers[i].indexOf(currSelection.value) == -1)) {
+        bon=false;
+        break;
+        }
+      if (!(currSelection.checked)&&(answers[i].indexOf(currSelection.value) != -1)) {
+        bon=false;
+        break;
+        }
+    }
+    if (bon==true) {score++}
+  }
+
+  score = Math.round(score/numQues*100);
+  form.percentage.value = score + "%";
+
+  var correctAnswers = "";
+  for (i=1; i<=numQues; i++) {
+    correctAnswers += i + ". " + answers[i-1] + "\r\n";
+  }
+  form.solutions.value = correctAnswers;
+
+}
+
+// -->
+</script>
+</head>
+
+<body>
+
+<form name="quiz">
+<b>1. Pourquoi les tableaux sont-ils importants dans la structuration de l'information ?</b><br>
+<input type="checkbox" name="q1" value="Pour diminuer la lisibilité des informations">Pour diminuer la lisibilité des informations<br>
+<input type="checkbox" name="q1" value="Pour ajouter des couleurs aux cellules">Pour ajouter des couleurs aux cellules<br>
+<input type="checkbox" name="q1" value="Pour organiser et structurer les données">Pour organiser et structurer les données<br>
+<p>
+
+<b>2. Parmi les options suivantes, laquelle est un avantage des tableaux dans Excel par rapport à Word ?</b><br>
+<input type="checkbox" name="q2" value="Outils de tri, filtrage et recherche performants">Outils de tri, filtrage et recherche performants<br>
+<input type="checkbox" name="q2" value="Fonctionnalités de calcul limitées">Fonctionnalités de calcul limitées<br>
+<input type="checkbox" name="q2" value="Facilité à gérer de grandes quantités de données">Facilité à gérer de grandes quantités de données<br>
+<p>
+
+<b>3. Quel est un exemple de données qui peut être mieux présentée sous forme de tableau dans Excel ?</b><br>
+<input type="checkbox" name="q3" value="Une lettre de motivation">Une lettre de motivation<br>
+<input type="checkbox" name="q3" value="Un article de journal">Un article de journal<br>
+<input type="checkbox" name="q3" value="Des ventes mensuelles avec les quantités vendues">Des ventes mensuelles avec les quantités vendues<br>
+<p>
+
+<b>4. Quelles sont les principales difficultés rencontrées avec les tableaux Word ?</b><br>
+<input type="checkbox" name="q4" value="Fonctionnalités de calcul illimitées">Fonctionnalités de calcul illimitées<br>
+<input type="checkbox" name="q4" value="Outils de tri et de filtrage performants">Outils de tri et de filtrage performants<br>
+<input type="checkbox" name="q4" value="Problèmes de compatibilité avec d'autres logiciels">Problèmes de compatibilité avec d'autres logiciels<br>
+<p>
+
+<input type="button" value="Score" onClick="getScore(this.form)">
+<input type="reset" value="RAZ"><p>
+Score = <input type=text size=15 name="percentage"><br>
+Réponses correctes :<br>
+<textarea name="solutions" wrap="virtual" rows="4" cols="40"></textarea>
+</form>
+
+</body></html>
