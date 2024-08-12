@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Pratique Excel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 {
+            color: #007BFF;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .section-title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <h1>Exercice Pratique : Gestion de Feuilles et Mise en Page Avancée d'un Tableau</h1>
+        <p><strong>Objectif :</strong><br>
+        Apprendre à créer, manipuler des feuilles Excel, à gérer les données, et à mettre en forme un tableau avec des fonctionnalités avancées.</p>
+
+        <h2>Étapes :</h2>
+
+        <div class="section-title">1. Création et Gestion de Feuilles :</div>
+        <ul>
+            <li>Ouvrez un nouveau classeur Excel.</li>
+            <li>Renommez la feuille par défaut en "Employés".</li>
+            <li>Créez une nouvelle feuille et nommez-la "Statistiques".</li>
+            <li>Créez une troisième feuille et nommez-la "Archives_2024".</li>
+            <li>Créez une quatrième feuille et nommez-la "Rapports".</li>
+            <li>Créez une cinquième feuille et nommez-la "Planifications".</li>
+        </ul>
+
+        <div class="section-title">2. Copie, Masquage, et Réorganisation de Feuilles :</div>
+        <ul>
+            <li>Copiez la feuille "Employés" et nommez cette copie "Employés_Backup".</li>
+            <li>Masquez la feuille "Archives_2024".</li>
+            <li>Réorganisez les feuilles dans cet ordre :
+                <ul>
+                    <li>Employés</li>
+                    <li>Employés_Backup</li>
+                    <li>Statistiques</li>
+                    <li>Rapports</li>
+                    <li>Planifications</li>
+                    <li>Archives_2024 (masquée)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="section-title">3. Création et Gestion des Données :</div>
+        <ul>
+            <li>Sur la feuille "Employés", créez un tableau avec les colonnes suivantes :
+                <ul>
+                    <li>Nom</li>
+                    <li>Prénom</li>
+                    <li>Âge</li>
+                    <li>Département</li>
+                    <li>Date d'embauche</li>
+                    <li>Salaire</li>
+                </ul>
+            </li>
+            <li>Entrez au moins 10 lignes de données fictives avec des informations variées.</li>
+            <li>Triez les données par "Département" puis par "Nom" en ordre alphabétique.</li>
+        </ul>
+
+        <div class="section-title">4. Mise en Forme du Tableau :</div>
+        <ul>
+            <li><strong>Police et Bordures :</strong><br>
+                Sélectionnez tout le tableau et changez la police en Calibri, taille 11.<br>
+                Appliquez des bordures extérieures et intérieures fines à toutes les cellules du tableau.
+            </li>
+            <li><strong>Couleurs des Cellules :</strong><br>
+                Changez la couleur de fond de la première ligne (en-tête) en gris foncé.<br>
+                Changez la couleur de la police de la première ligne en blanc.<br>
+                Appliquez une couleur de fond alternée (une ligne sur deux) en gris clair pour les données.
+            </li>
+            <li><strong>Ajustement des Colonnes et des Lignes :</strong><br>
+                Ajustez la hauteur des lignes à 25 points.<br>
+                Ajustez la largeur des colonnes pour que tout le texte soit visible.
+            </li>
+            <li><strong>Retour à la Ligne :</strong><br>
+                Appliquez le retour à la ligne automatique dans les colonnes "Département" et "Date d'embauche".
+            </li>
+            <li><strong>Alignement et Centrage :</strong><br>
+                Centrez le texte des colonnes "Âge" et "Salaire".
+            </li>
+            <li><strong>Formatage des Données :</strong><br>
+                Appliquez un format de date "JJ/MM/AAAA" à la colonne "Date d'embauche".<br>
+                Appliquez un format monétaire avec deux décimales à la colonne "Salaire".
+            </li>
+        </ul>
+
+        <div class="section-title">5. Ajout de Fonctions et Calculs Automatiques :</div>
+        <ul>
+            <li><strong>Calcul des Moyennes :</strong><br>
+                Sur la feuille "Statistiques", calculez la moyenne des âges et des salaires des employés.
+            </li>
+            <li><strong>Comptage des Employés par Département :</strong><br>
+                Utilisez la fonction NB.SI pour compter le nombre d'employés dans chaque département sur la feuille "Statistiques".
+            </li>
+            <li><strong>Somme des Salaires :</strong><br>
+                Sur la feuille "Statistiques", calculez la somme totale des salaires.
+            </li>
+        </ul>
+
+        <div class="section-title">6. Finalisation et Vérification :</div>
+        <ul>
+            <li><strong>Validation des Données :</strong><br>
+                Appliquez une validation des données sur la colonne "Âge" pour limiter les valeurs entre 18 et 65 ans.<br>
+                Appliquez une validation des données sur la colonne "Salaire" pour qu'elle ne soit jamais inférieure à 1500.
+            </li>
+            <li><strong>Protection des Feuilles :</strong><br>
+                Protégez la feuille "Employés_Backup" contre toute modification.<br>
+                Protégez la feuille "Planifications" avec un mot de passe de votre choix.
+            </li>
+        </ul>
+
+        <p>Ce long exercice permet de pratiquer une variété de fonctionnalités Excel tout en renforçant les compétences de base en gestion des feuilles et de mise en page.</p>
+    </div>
+
+</body>
+</html>
