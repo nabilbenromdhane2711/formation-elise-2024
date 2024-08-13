@@ -3,144 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercice Pratique Excel</title>
+    <title>TP Excel : Mise en Forme Conditionnelle et Gestion des Doublons</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
-            background-color: #f4f4f4;
+        }
+        h1 {
             color: #333;
         }
-        h1, h2 {
-            color: #007BFF;
+        h2 {
+            color: #555;
+        }
+        p, li {
+            font-size: 1em;
+            margin-bottom: 10px;
         }
         ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        .section-title {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        .content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            list-style-type: square;
+            padding-left: 20px;
         }
     </style>
 </head>
 <body>
 
-    <div class="content">
-        <h1>Exercice Pratique : Gestion de Feuilles et Mise en Page Avancée d'un Tableau</h1>
-        <p><strong>Objectif :</strong><br>
-        Apprendre à créer, manipuler des feuilles Excel, à gérer les données, et à mettre en forme un tableau avec des fonctionnalités avancées.</p>
+    <h1>TP pour Débutant en Excel (versions 2013 ou 2016)</h1>
+    <p>Ce TP inclut la mise en forme conditionnelle, la détection et la suppression des doublons.</p>
 
-        <h2>Étapes :</h2>
+    <h2>Travail Pratique : Mise en Forme Conditionnelle et Gestion des Doublons</h2>
 
-        <div class="section-title">1. Création et Gestion de Feuilles :</div>
+    <p><strong>Objectif :</strong> Apprendre à appliquer la mise en forme conditionnelle, détecter et supprimer les doublons dans une feuille Excel.</p>
+
+    <p><strong>Durée estimée :</strong> 15 minutes</p>
+
+    <h3>Étape 1 : Création de la feuille de travail</h3>
+    <ul>
+        <li>Ouvrez Excel.</li>
+        <li>Dans une nouvelle feuille, saisissez les données suivantes dans les cellules A1 à A10 :</li>
         <ul>
-            <li>Ouvrez un nouveau classeur Excel.</li>
-            <li>Renommez la feuille par défaut en "Employés".</li>
-            <li>Créez une nouvelle feuille et nommez-la "Statistiques".</li>
-            <li>Créez une troisième feuille et nommez-la "Archives_2024".</li>
-            <li>Créez une quatrième feuille et nommez-la "Rapports".</li>
-            <li>Créez une cinquième feuille et nommez-la "Planifications".</li>
+            <li>A1 : 45</li>
+            <li>A2 : 60</li>
+            <li>A3 : 75</li>
+            <li>A4 : 30</li>
+            <li>A5 : 90</li>
+            <li>A6 : 60</li>
+            <li>A7 : 45</li>
+            <li>A8 : 80</li>
+            <li>A9 : 90</li>
+            <li>A10 : 100</li>
         </ul>
+    </ul>
 
-        <div class="section-title">2. Copie, Masquage, et Réorganisation de Feuilles :</div>
-        <ul>
-            <li>Copiez la feuille "Employés" et nommez cette copie "Employés_Backup".</li>
-            <li>Masquez la feuille "Archives_2024".</li>
-            <li>Réorganisez les feuilles dans cet ordre :
-                <ul>
-                    <li>Employés</li>
-                    <li>Employés_Backup</li>
-                    <li>Statistiques</li>
-                    <li>Rapports</li>
-                    <li>Planifications</li>
-                    <li>Archives_2024 (masquée)</li>
-                </ul>
-            </li>
-        </ul>
+    <h3>Étape 2 : Mise en forme conditionnelle de base</h3>
+    <ul>
+        <li>Sélectionnez les cellules A1 à A10.</li>
+        <li>Allez dans le menu <strong>"Accueil"</strong>, puis cliquez sur <strong>"Mise en forme conditionnelle"</strong>.</li>
+        <li>Choisissez <strong>"Règles de mise en surbrillance des cellules"</strong> > <strong>"Inférieur à..."</strong>.</li>
+        <li>Dans la boîte de dialogue qui s'ouvre, saisissez <strong>"50"</strong> et choisissez un format (par exemple, remplissage rouge clair).</li>
+        <li>Cliquez sur <strong>"OK"</strong>.</li>
+    </ul>
 
-        <div class="section-title">3. Création et Gestion des Données :</div>
-        <ul>
-            <li>Sur la feuille "Employés", créez un tableau avec les colonnes suivantes :
-                <ul>
-                    <li>Nom</li>
-                    <li>Prénom</li>
-                    <li>Âge</li>
-                    <li>Département</li>
-                    <li>Date d'embauche</li>
-                    <li>Salaire</li>
-                </ul>
-            </li>
-            <li>Entrez au moins 10 lignes de données fictives avec des informations variées.</li>
-            <li>Triez les données par "Département" puis par "Nom" en ordre alphabétique.</li>
-        </ul>
+    <h3>Étape 3 : Mise en forme conditionnelle pour les valeurs supérieures à 80</h3>
+    <ul>
+        <li>Assurez-vous que les cellules A1 à A10 sont toujours sélectionnées.</li>
+        <li>Retournez dans <strong>"Mise en forme conditionnelle"</strong>.</li>
+        <li>Sélectionnez <strong>"Règles de mise en surbrillance des cellules"</strong> > <strong>"Supérieur à..."</strong>.</li>
+        <li>Dans la boîte de dialogue, saisissez <strong>"80"</strong> et choisissez un format différent (par exemple, remplissage vert clair).</li>
+        <li>Cliquez sur <strong>"OK"</strong>.</li>
+    </ul>
 
-        <div class="section-title">4. Mise en Forme du Tableau :</div>
-        <ul>
-            <li><strong>Police et Bordures :</strong><br>
-                Sélectionnez tout le tableau et changez la police en Calibri, taille 11.<br>
-                Appliquez des bordures extérieures et intérieures fines à toutes les cellules du tableau.
-            </li>
-            <li><strong>Couleurs des Cellules :</strong><br>
-                Changez la couleur de fond de la première ligne (en-tête) en gris foncé.<br>
-                Changez la couleur de la police de la première ligne en blanc.<br>
-                Appliquez une couleur de fond alternée (une ligne sur deux) en gris clair pour les données.
-            </li>
-            <li><strong>Ajustement des Colonnes et des Lignes :</strong><br>
-                Ajustez la hauteur des lignes à 25 points.<br>
-                Ajustez la largeur des colonnes pour que tout le texte soit visible.
-            </li>
-            <li><strong>Retour à la Ligne :</strong><br>
-                Appliquez le retour à la ligne automatique dans les colonnes "Département" et "Date d'embauche".
-            </li>
-            <li><strong>Alignement et Centrage :</strong><br>
-                Centrez le texte des colonnes "Âge" et "Salaire".
-            </li>
-            <li><strong>Formatage des Données :</strong><br>
-                Appliquez un format de date "JJ/MM/AAAA" à la colonne "Date d'embauche".<br>
-                Appliquez un format monétaire avec deux décimales à la colonne "Salaire".
-            </li>
-        </ul>
+    <h3>Étape 4 : Mise en forme conditionnelle pour les valeurs en double</h3>
+    <ul>
+        <li>Toujours avec les cellules A1 à A10 sélectionnées, allez à nouveau dans <strong>"Mise en forme conditionnelle"</strong>.</li>
+        <li>Choisissez <strong>"Règles de mise en surbrillance des cellules"</strong> > <strong>"Valeurs en double..."</strong>.</li>
+        <li>Dans la boîte de dialogue, choisissez un format (par exemple, remplissage jaune clair).</li>
+        <li>Cliquez sur <strong>"OK"</strong>.</li>
+    </ul>
 
-        <div class="section-title">5. Ajout de Fonctions et Calculs Automatiques :</div>
-        <ul>
-            <li><strong>Calcul des Moyennes :</strong><br>
-                Sur la feuille "Statistiques", calculez la moyenne des âges et des salaires des employés.
-            </li>
-            <li><strong>Comptage des Employés par Département :</strong><br>
-                Utilisez la fonction NB.SI pour compter le nombre d'employés dans chaque département sur la feuille "Statistiques".
-            </li>
-            <li><strong>Somme des Salaires :</strong><br>
-                Sur la feuille "Statistiques", calculez la somme totale des salaires.
-            </li>
-        </ul>
-
-        <div class="section-title">6. Finalisation et Vérification :</div>
-        <ul>
-            <li><strong>Validation des Données :</strong><br>
-                Appliquez une validation des données sur la colonne "Âge" pour limiter les valeurs entre 18 et 65 ans.<br>
-                Appliquez une validation des données sur la colonne "Salaire" pour qu'elle ne soit jamais inférieure à 1500.
-            </li>
-            <li><strong>Protection des Feuilles :</strong><br>
-                Protégez la feuille "Employés_Backup" contre toute modification.<br>
-                Protégez la feuille "Planifications" avec un mot de passe de votre choix.
-            </li>
-        </ul>
-
-        <p>Ce long exercice permet de pratiquer une variété de fonctionnalités Excel tout en renforçant les compétences de base en gestion des feuilles et de mise en page.</p>
-    </div>
+    <h3>Étape 5 : Détection des doublons</h3>
+    <ul>
+        <li>Sélectionnez à nouveau les cellules A1 à A10.</li>
+        <li>Allez dans le menu <strong>"Données"</strong>.</li>
+        <li>Cliquez sur <strong>"Supprimer les doublons"</strong> dans la section <strong>"Outils de données"</strong>.</li>
+        <li>Dans la boîte de dialogue qui s'affiche, assurez-vous que <strong>"La colonne A"</strong> est cochée.</li>
+        <li>Cliquez sur <strong>"OK"</strong>.</li>
+        <li>Excel vous informera du nombre de doublons supprimés et du nombre de valeurs uniques restantes. Cliquez sur <strong>"OK"</strong> pour terminer.</li>
+    </ul>
 
 </body>
 </html>
