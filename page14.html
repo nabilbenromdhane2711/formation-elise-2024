@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Excel : Gestion des Notes et Calcul des Moyennes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p, li {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Travail Pratique : Gestion des Notes et Calcul des Moyennes</h2>
+
+    <p><strong>Objectif :</strong> Apprendre à calculer des sommes et des moyennes, et utiliser une formule conditionnelle pour évaluer des résultats.</p>
+
+    <p><strong>Durée estimée :</strong> 15 minutes</p>
+
+    <h3>Étape 1 : Création de la feuille de travail</h3>
+    <ul>
+        <li>Ouvrez Excel.</li>
+        <li>Dans une nouvelle feuille, saisissez les informations suivantes :</li>
+        <ul>
+            <li>En <strong>A1</strong> : "Élève"</li>
+            <li>En <strong>B1</strong> : "Mathématiques"</li>
+            <li>En <strong>C1</strong> : "Physique"</li>
+            <li>En <strong>D1</strong> : "Français"</li>
+            <li>En <strong>E1</strong> : "Histoire"</li>
+            <li>En <strong>F1</strong> : "Somme"</li>
+            <li>En <strong>G1</strong> : "Moyenne (calculée)"</li>
+            <li>En <strong>H1</strong> : "Moyenne (automatique)"</li>
+            <li>En <strong>I1</strong> : "Résultat"</li>
+        </ul>
+        <li>Saisissez les noms des élèves en A2 à A5 :</li>
+        <ul>
+            <li>A2 : "Élève 1"</li>
+            <li>A3 : "Élève 2"</li>
+            <li>A4 : "Élève 3"</li>
+            <li>A5 : "Élève 4"</li>
+        </ul>
+    </ul>
+
+    <h3>Étape 2 : Saisie des notes</h3>
+    <ul>
+        <li>Entrez les notes des élèves dans les colonnes <strong>B</strong> à <strong>E</strong> pour chaque matière. Par exemple :</li>
+        <ul>
+            <li>Élève 1 : 12, 14, 10, 11</li>
+            <li>Élève 2 : 8, 9, 7, 10</li>
+            <li>Élève 3 : 15, 13, 14, 16</li>
+            <li>Élève 4 : 10, 12, 11, 9</li>
+        </ul>
+    </ul>
+
+    <h3>Étape 3 : Calcul de la somme des notes</h3>
+    <ul>
+        <li>Sélectionnez la cellule <strong>F2</strong> (Somme pour Élève 1).</li>
+        <li>Tapez la formule suivante : <code>=B2+C2+D2+E2</code> puis appuyez sur <strong>Entrée</strong>.</li>
+        <li>Copiez cette formule vers le bas pour les cellules <strong>F3</strong> à <strong>F5</strong>.</li>
+    </ul>
+
+    <h3>Étape 4 : Calcul de la moyenne manuelle</h3>
+    <ul>
+        <li>Sélectionnez la cellule <strong>G2</strong> (Moyenne calculée pour Élève 1).</li>
+        <li>Tapez la formule suivante : <code>=F2/4</code> puis appuyez sur <strong>Entrée</strong>.</li>
+        <li>Copiez cette formule vers le bas pour les cellules <strong>G3</strong> à <strong>G5</strong>.</li>
+    </ul>
+
+    <h3>Étape 5 : Calcul de la moyenne automatique avec la fonction MOYENNE</h3>
+    <ul>
+        <li>Sélectionnez la cellule <strong>H2</strong> (Moyenne automatique pour Élève 1).</li>
+        <li>Tapez la formule suivante : <code>=MOYENNE(B2:E2)</code> puis appuyez sur <strong>Entrée</strong>.</li>
+        <li>Copiez cette formule vers le bas pour les cellules <strong>H3</strong> à <strong>H5</strong>.</li>
+    </ul>
+
+    <h3>Étape 6 : Évaluation des résultats avec une condition</h3>
+    <ul>
+        <li>Sélectionnez la cellule <strong>I2</strong> (Résultat pour Élève 1).</li>
+        <li>Tapez la formule suivante : <code>=SI(H2>10;"admis";"redoublant")</code> puis appuyez sur <strong>Entrée</strong>.</li>
+        <li>Copiez cette formule vers le bas pour les cellules <strong>I3</strong> à <strong>I5</strong>.</li>
+        <li>Assurez-vous que les résultats "Admis" ou "Redoublant" sont correctement affichés en fonction des moyennes.</li>
+    </ul>
+
+    <p>Ce TP vous a permis de manipuler des données, de calculer des sommes et des moyennes, et d'appliquer une formule conditionnelle dans Excel.</p>
+
+</body>
+</html>
