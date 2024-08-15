@@ -1,130 +1,83 @@
-<html><head><title></title>
-<script language="JavaScript">
-<!--
-
-var numQues = 10;
-var numChoi = 3;
-
-var answers = new Array(10);
-answers[0] = "Mise en forme conditionnelle, ";
-answers[1] = "=SOMME(A1;A10), ";
-answers[2] = "=SI(B2>=10;"Admis";"Échec"), ";
-answers[3] = "Accueil, ";
-answers[4] = "Supérieur à, Inférieur à, entre, ";
-answers[5] = " Oui, il existe une règle prédéfinie pour cela, ";
-answers[6] = "Sélectionnez la plage de données, ";
-answers[7] = "Met en surbrillance les cellules qui contiennent une valeur supérieure à un seuil spécifié, ";
-answers[8] = "Suppression des doublons, ";
-answers[9] = "Onglet Données > Outils de données, ";
-
-function getScore(form) {
-  var score = 0;
-  var currElt;
-  var currSelection;
-  var bon = false;
-
-  for (i=0; i<numQues; i++) {
-    currElt = i*numChoi;
-    bon=false;
-    for (j=0; j<numChoi; j++) {
-      currSelection = form.elements[currElt + j];
-      if ((currSelection.checked)&&(answers[i].indexOf(currSelection.value) != -1)) {
-        bon=true;}
-      if ((currSelection.checked)&&(answers[i].indexOf(currSelection.value) == -1)) {
-        bon=false;
-        break;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de QCM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
         }
-      if (!(currSelection.checked)&&(answers[i].indexOf(currSelection.value) != -1)) {
-        bon=false;
-        break;
+        .question {
+            margin-bottom: 20px;
         }
-    }
-    if (bon==true) {score++}
-  }
-
-  score = Math.round(score/numQues*100);
-  form.percentage.value = score + "%";
-
-  var correctAnswers = "";
-  for (i=1; i<=numQues; i++) {
-    correctAnswers += i + ". " + answers[i-1] + "\r\n";
-  }
-  form.solutions.value = correctAnswers;
-
-}
-
-// -->
-</script>
+        .question input[type="radio"] {
+            margin-right: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
+    <h1>Test QCM Excel</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Quel outil Excel permet de changer automatiquement la couleur d'une cellule en fonction de sa valeur ?</p>
+            <input type="radio" name="q1" value="a"> <label>Validation des données</label><br>
+            <input type="radio" name="q1" value="b"> <label>Mise en forme optionnelle</label><br>
+            <input type="radio" name="q1" value="c"> <label>Mise en page</label><br>
+            <input type="radio" name="q1" value="d"> <label>Mise en forme conditionnelle</label>
+        </div>
+        <div class="question">
+            <p>2. Quelle formule utiliseriez-vous pour additionner les valeurs des cellules A1 à A10 ?</p>
+            <input type="radio" name="q2" value="a"> <label>=SOMME(deA1 à A10)</label><br>
+            <input type="radio" name="q2" value="b"> <label>=SOMME(A1+A10)</label><br>
+            <input type="radio" name="q2" value="c"> <label>=SOMME(A1,A10)</label><br>
+            <input type="radio" name="q2" value="d"> <label>=SOMME(A1;A10)</label>
+        </div>
+        <div class="question">
+            <p>3. Quelle formule renvoie "Admis" si la valeur de la cellule B2 est supérieure ou égale à 10, et "Échec" dans le cas contraire ?</p>
+            <input type="radio" name="q3" value="a"> <label>=IS(B2>=10;"Admis";"Échec")</label><br>
+            <input type="radio" name="q3" value="b"> <label>=SI(B2>=10;"Admis";"Échec")</label><br>
+            <input type="radio" name="q3" value="c"> <label>=SI(B2>=10;Admis;Échec)</label><br>
+            <input type="radio" name="q3" value="d"> <label>=SI(B2>=10;[Admis];[Échec])</label>
+        </div>
+        <div class="question">
+            <p>4. Dans quel onglet du ruban Excel se trouve la mise en forme conditionnelle ?</p>
+            <input type="radio" name="q4" value="a"> <label>Données</label><br>
+            <input type="radio" name="q4" value="b"> <label>Accueil</label><br>
+            <input type="radio" name="q4" value="c"> <label>Mise en page</label><br>
+            <input type="radio" name="q4" value="d"> <label>Insertion</label>
+        </div>
+        <button type="button" onclick="checkAnswers()">Soumettre</button>
+    </form>
+    <div id="result" class="result"></div>
 
-<form name="quiz">
-<b>1. Quel outil Excel permet de changer automatiquement la couleur d'une cellule en fonction de sa valeur ?</b><br>
-<input type="checkbox" name="q1" value=" Validation des données"> Validation des données<br>
-<input type="checkbox" name="q1" value="Mise en page">Mise en page<br>
-<input type="checkbox" name="q1" value="Mise en forme conditionnelle">Mise en forme conditionnelle<br>
-<p>
+    <script>
+        const correctAnswers = {
+            q1: 'd', // Réponse correcte pour la question 1
+            q2: 'd', // Réponse correcte pour la question 2
+            q3: 'b', // Réponse correcte pour la question 3
+            q4: 'b'  // Réponse correcte pour la question 4
+        };
 
-<b>2. Quelle formule utiliseriez-vous pour additionner les valeurs des cellules A1 à A10 ?</b><br>
-<input type="checkbox" name="q2" value="=SOMME(deA1  à A10)">=SOMME(deA1  à A10)<br>
-<input type="checkbox" name="q2" value="=SOMME(A1;A10)">=SOMME(A1;A10)<br>
-<input type="checkbox" name="q2" value="=SOMME(A1/A10)">=SOMME(A1/A10)<br>
-<p>
+        function checkAnswers() {
+            const form = document.getElementById('quizForm');
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
 
-<b>3. Quelle formule renvoie "Admis" si la valeur de la cellule B2 est supérieure ou égale à 10, et "Échec" dans le cas contraire ?</b><br>
-<input type="checkbox" name="q3" value="=IS(B2>=10;"Admis";"Échec")">=IS(B2>=10;"Admis";"Échec")<br>
-<input type="checkbox" name="q3" value="=SI(B2>=10;Admis;Échec)">=SI(B2>=10;Admis;Échec)<br>
-<input type="checkbox" name="q3" value="=SI(B2>=10;"Admis";"Échec")">=SI(B2>=10;"Admis";"Échec")<br>
-<p>
+            for (let question in correctAnswers) {
+                let selectedAnswer = form.querySelector(`input[name="${question}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
 
-<b>4. Dans quel onglet du ruban Excel se trouve la mise en forme conditionnelle ?</b><br>
-<input type="checkbox" name="q4" value="Insertion">Insertion<br>
-<input type="checkbox" name="q4" value="Données">Données<br>
-<input type="checkbox" name="q4" value="Accueil">Accueil<br>
-<p>
-
-<b>5. Laquelle des options suivantes sont des règles prédéfinies dans la mise en forme conditionnelle d'Excel ?</b><br>
-<input type="checkbox" name="q5" value="Supérieur à">Supérieur à<br>
-<input type="checkbox" name="q5" value="Inférieur à">Inférieur à<br>
-<input type="checkbox" name="q5" value="entre">entre<br>
-<p>
-
-<b>6. La mise en forme conditionnelle peut-elle automatiquement détecter les valeurs en double dans une plage de cellules ?</b><br>
-<input type="checkbox" name="q6" value=" Oui, il existe une règle prédéfinie pour cela"> Oui, il existe une règle prédéfinie pour cela<br>
-<input type="checkbox" name="q6" value=" Non, il faut créer une règle personnalisée"> Non, il faut créer une règle personnalisée<br>
-<input type="checkbox" name="q6" value="Non, cela n'est pas possible dans Excel">Non, cela n'est pas possible dans Excel<br>
-<p>
-
-<b>7. Quelle est la première étape pour appliquer une mise en forme conditionnelle dans Excel ?</b><br>
-<input type="checkbox" name="q7" value="Allez dans le menu "Accueil" > "Mise en forme conditionnelle"">Allez dans le menu "Accueil" > "Mise en forme conditionnelle"<br>
-<input type="checkbox" name="q7" value=" Choisissez une règle"> Choisissez une règle<br>
-<input type="checkbox" name="q7" value="Sélectionnez la plage de données">Sélectionnez la plage de données<br>
-<p>
-
-<b>8. Que fait la règle "Supérieur à..." dans la mise en forme conditionnelle ?</b><br>
-<input type="checkbox" name="q8" value=" Ajoute une bordure autour des cellules"> Ajoute une bordure autour des cellules<br>
-<input type="checkbox" name="q8" value=" Change la couleur de la police"> Change la couleur de la police<br>
-<input type="checkbox" name="q8" value="Met en surbrillance les cellules qui contiennent une valeur supérieure à un seuil spécifié">Met en surbrillance les cellules qui contiennent une valeur supérieure à un seuil spécifié<br>
-<p>
-
-<b>9. Quelle fonctionnalité d'Excel vous permet de supprimer les valeurs dupliquées dans une plage de cellules ?</b><br>
-<input type="checkbox" name="q9" value="Validation des données">Validation des données<br>
-<input type="checkbox" name="q9" value="Rechercher et Remplacer">Rechercher et Remplacer<br>
-<input type="checkbox" name="q9" value="Suppression des doublons">Suppression des doublons<br>
-<p>
-
-<b>10. Où se trouve l'option "Supprimer les doublons" dans Excel ?</b><br>
-<input type="checkbox" name="q10" value="Onglet Données > Outils de données">Onglet Données > Outils de données<br>
-<input type="checkbox" name="q10" value="Onglet accueil> Outils de données">Onglet accueil> Outils de données<br>
-<input type="checkbox" name="q10" value="Onglet insertion> Outils de données">Onglet insertion> Outils de données<br>
-<p>
-
-<input type="button" value="Score" onClick="getScore(this.form)">
-<input type="reset" value="RAZ"><p>
-Score = <input type=text size=15 name="percentage"><br>
-Réponses correctes :<br>
-<textarea name="solutions" wrap="virtual" rows="4" cols="40"></textarea>
-</form>
-
-</body></html>
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `Vous avez obtenu ${score} sur ${totalQuestions}.`;
+        }
+    </script>
+</body>
+</html>
