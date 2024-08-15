@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Excel : Calcul d'Âge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h3 {
+            color: #2c3e50;
+        }
+        h4 {
+            color: #2980b9;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 3px solid #ccc;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h3>Exercice : Tableau avec calcul d'âge en utilisant la date actuelle</h3>
+
+    <h4>Étape 1 : Création du tableau</h4>
+    <ol>
+        <li>Ouvrir Excel.</li>
+        <li>Dans la cellule A1, taper "Nom".</li>
+        <li>Dans la cellule B1, taper "Prénom".</li>
+        <li>Dans la cellule C1, taper "Date de Naissance".</li>
+        <li>Dans la cellule D1, taper "Date Actuelle".</li>
+        <li>Dans la cellule E1, taper "Âge (en années)".</li>
+    </ol>
+
+    <h4>Étape 2 : Saisie des données</h4>
+    <ol>
+        <li>Dans les cellules A2 à A7, entrer les noms de 6 personnes.</li>
+        <li>Dans les cellules B2 à B7, entrer les prénoms correspondants.</li>
+        <li>Dans les cellules C2 à C7, entrer les dates de naissance (au format jj/mm/aaaa).</li>
+    </ol>
+
+    <h4>Étape 3 : Insérer la date actuelle</h4>
+    <ol>
+        <li>Dans la cellule D2, saisir la formule suivante :</li>
+        <pre>=AUJOURD'HUI()</pre>
+        <li>Appuyer sur Entrée. La cellule D2 doit maintenant afficher la date d'aujourd'hui.</li>
+        <li>Copier la formule de la cellule D2 vers D3 jusqu'à D7 pour remplir la date actuelle pour les autres lignes.</li>
+    </ol>
+
+    <h4>Étape 4 : Calculer l'âge</h4>
+    <ol>
+        <li>Dans la cellule E2, saisir la formule suivante pour calculer l'âge :</li>
+        <pre>=(D2-C2)/365,25</pre>
+        <p>Cette formule soustrait la date de naissance de la date actuelle, puis divise le résultat par 365,25 (pour tenir compte des années bissextiles).</p>
+        <li>Appuyer sur Entrée. La cellule E2 doit maintenant afficher l'âge en années, y compris les fractions.</li>
+        <li>Copier la formule de la cellule E2 vers E3 jusqu'à E7 pour calculer l'âge des autres personnes.</li>
+        <li>Optionnel : Si vous voulez arrondir l'âge à l'année la plus proche, vous pouvez utiliser la formule suivante dans la colonne E :</li>
+        <pre>=ARRONDI((D2-C2)/365,25; 0)</pre>
+        <p>Cette formule arrondira l'âge au nombre entier le plus proche.</p>
+    </ol>
+
+    <h4>Étape 5 : Trier les données</h4>
+    <ol>
+        <li>Sélectionner les données de A1 à E7 (inclus).</li>
+        <li>Aller dans l'onglet "Données".</li>
+        <li>Cliquer sur "Trier".</li>
+        <li>Choisir de trier par "Date de Naissance" ou "Âge (en années)" selon votre choix.</li>
+        <li>Appuyer sur "OK" pour appliquer le tri.</li>
+    </ol>
+
+    <h4>Étape 6 : Calcul de l'âge minimum et maximum</h4>
+    <ol>
+        <li>Dans la cellule G1, taper "Âge Minimum".</li>
+        <li>Dans la cellule H1, taper "Âge Maximum".</li>
+        <li>Dans la cellule G2, entrer la formule suivante pour trouver l'âge minimum :</li>
+        <pre>=MIN(E2:E7)</pre>
+        <li>Dans la cellule H2, entrer la formule suivante pour trouver l'âge maximum :</li>
+        <pre>=MAX(E2:E7)</pre>
+        <li>Appuyer sur Entrée après chaque formule. Les cellules G2 et H2 doivent afficher respectivement l'âge minimum et maximum parmi les personnes listées.</li>
+    </ol>
+
+    <h4>Étape 7 : Sauvegarde du fichier</h4>
+    <ol>
+        <li>Aller dans "Fichier" puis "Enregistrer sous".</li>
+        <li>Choisir un emplacement pour enregistrer le fichier.</li>
+        <li>Donner un nom au fichier (par exemple, "Exercice Calcul d'Âge avec Date Actuelle").</li>
+        <li>Cliquer sur "Enregistrer".</li>
+    </ol>
+</body>
+</html>
