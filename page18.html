@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Excel : Filtres Progressifs</title>
+</head>
+<body>
+    <h1>Exercice : Filtres Progressifs</h1>
+
+    <h2>Contexte :</h2>
+    <p>Vous disposez d'une liste de produits avec les colonnes suivantes : <strong>ID Produit</strong>, <strong>Nom du Produit</strong>, <strong>Catégorie</strong>, <strong>Prix</strong> (€), <strong>Quantité en Stock</strong>, <strong>Date d'Ajout</strong>, <strong>Vendeur</strong>. Vous devez appliquer différents filtres pour extraire des informations spécifiques.</p>
+    <p>Soit le tableau suivant :</p>
+    <pre>
+ID Produit,Nom du Produit,Catégorie,Prix (€),Quantité en Stock,Date d'Ajout,Vendeur
+001,Télévision LED 40",Électronique,450,30,2023-01-15,TechStore
+002,Smartphone X,Électronique,299,120,2022-11-20,MobileWorld
+003,Aspirateur 3000W,Électroménager,120,50,2023-05-10,HomeAppliances
+004,Tablette 10",Électronique,199,75,2023-02-18,TechStore
+005,Réfrigérateur 200L,Électroménager,500,20,2023-03-05,HomeAppliances
+006,Casque Bluetooth,Accessoires,80,150,2023-06-12,MobileWorld
+007,Machine à café,Électroménager,70,40,2023-07-01,CoffeeKing
+008,Ordinateur Portable A,Électronique,650,15,2023-04-22,TechStore
+009,Micro-ondes 800W,Électroménager,90,60,2022-12-15,HomeAppliances
+010,Chargeur sans fil,Accessoires,25,200,2023-07-20,MobileWorld
+011,Console de jeux Y,Électronique,350,25,2023-01-30,TechStore
+012,Climatiseur 12,000 BTU,Électroménager,750,10,2023-06-01,HomeAppliances
+013,Écouteurs Intra-auriculaires,Accessoires,35,180,2023-03-10,MobileWorld
+014,Télécommande Universelle,Accessoires,15,300,2023-02-22,TechStore
+015,Lave-linge 7kg,Électroménager,320,20,2023-05-25,HomeAppliances
+    </pre>
+
+    <h2>Étape 1 : Filtre Simple</h2>
+    <ol>
+        <li><strong>Objectif :</strong> Filtrer tous les produits de la catégorie "Électronique".</li>
+        <li><strong>Instructions :</strong>
+            <ul>
+                <li>Sélectionnez la colonne <strong>Catégorie</strong>.</li>
+                <li>Appliquez un filtre pour afficher uniquement les produits de la catégorie "Électronique".</li>
+                <li>Copiez les résultats filtrés dans une nouvelle feuille nommée "Électronique".</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Étape 2 : Filtre avec Condition Numérique</h2>
+    <ol>
+        <li><strong>Objectif :</strong> Filtrer les produits de la catégorie "Électronique" avec un prix supérieur à 100€.</li>
+        <li><strong>Instructions :</strong>
+            <ul>
+                <li>Utilisez le filtre déjà appliqué sur la catégorie "Électronique".</li>
+                <li>Ajoutez un filtre sur la colonne <strong>Prix</strong> pour afficher uniquement les produits dont le prix est supérieur à 100€.</li>
+                <li>Copiez les résultats filtrés dans une nouvelle feuille nommée "Électronique >100€".</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Étape 3 : Filtre avec Condition de Texte</h2>
+    <ol>
+        <li><strong>Objectif :</strong> Filtrer les produits de la catégorie "Électronique" dont le prix est supérieur à 100€ et le vendeur est "TechStore".</li>
+        <li><strong>Instructions :</strong>
+            <ul>
+                <li>Continuez avec le filtre précédent (Catégorie = "Électronique" et Prix > 100€).</li>
+                <li>Ajoutez un filtre sur la colonne <strong>Vendeur</strong> pour afficher uniquement les produits vendus par "TechStore".</li>
+                <li>Copiez les résultats filtrés dans une nouvelle feuille nommée "TechStore >100€".</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Étape 4 : Filtre par Date</h2>
+    <ol>
+        <li><strong>Objectif :</strong> Filtrer les produits de la catégorie "Électronique" dont le prix est supérieur à 100€, vendus par "TechStore", et ajoutés en 2023.</li>
+        <li><strong>Instructions :</strong>
+            <ul>
+                <li>Continuez avec les filtres précédents.</li>
+                <li>Ajoutez un filtre sur la colonne <strong>Date d'Ajout</strong> pour afficher uniquement les produits ajoutés en 2023.</li>
+                <li>Copiez les résultats filtrés dans une nouvelle feuille nommée "2023 TechStore >100€".</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Étape 5 : Filtre Avancé Composé</h2>
+    <ol>
+        <li><strong>Objectif :</strong> Filtrer les produits de la catégorie "Électronique" dont le prix est supérieur à 100€, avec une quantité en stock inférieure à 50, vendus par "TechStore", et ajoutés en 2023.</li>
+        <li><strong>Instructions :</strong>
+            <ul>
+                <li>Continuez avec les filtres précédents.</li>
+                <li>Ajoutez un filtre sur la colonne <strong>Quantité en Stock</strong> pour afficher uniquement les produits avec une quantité en stock inférieure à 50.</li>
+                <li>Copiez les résultats filtrés dans une nouvelle feuille nommée "Stock &lt;50".</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Résultat attendu :</h2>
+    <p>À la fin de l'exercice, vous aurez cinq nouvelles feuilles dans votre classeur Excel :</p>
+    <ul>
+        <li>"Électronique"</li>
+        <li>"Électronique &gt;100€"</li>
+        <li>"TechStore &gt;100€"</li>
+        <li>"2023 TechStore &gt;100€"</li>
+        <li>"Stock &lt;50"</li>
+    </ul>
+    <p>Chaque feuille contiendra un ensemble de données filtrées correspondant aux critères de chaque étape. Cet exercice permet de comprendre l'utilisation des filtres simples et composés dans Excel.</p>
+</body>
+</html>
