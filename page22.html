@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP : Utilisation des Filtres et des Tableaux Croisés Dynamiques dans Excel</title>
+</head>
+<body>
+    <h3>TP : Utilisation des Filtres et des Tableaux Croisés Dynamiques dans Excel</h3>
+
+    <p><strong>Objectif :</strong> Apprendre à utiliser les filtres et les tableaux croisés dynamiques pour analyser des données.</p>
+
+    <p>Soit le tableau suivant qui montre les activités de quatre travailleurs sociaux pendant la période de 1-1-2024 au 30-02-2024:</p>
+
+    <pre>
+Date;ts;service;qte
+01/01/2024;ts1;Accueil et orientation;1
+01/01/2024;ts1;un entretien;2
+02/01/2024;ts1;un entretien;2
+02/01/2024;ts2;Accueil et orientation;3
+02/01/2024;ts3;enquete social;1
+01/01/2024;ts4;un entretien;1
+01/01/2024;ts1;un entretien;1
+02/01/2024;ts2;Une visite à domicile;1
+02/01/2024;ts3;un entretien;1
+02/01/2024;ts2;Une visite à domicile;1
+03/01/2024;ts3;un entretien;3
+12/01/2024;ts4;formulaire carte handicape;3
+13/01/2024;ts1;aide temporaire;3
+14/01/2024;ts2;formulaire carte handicape;3
+15/01/2024;ts3;aide temporaire;3
+16/01/2024;ts3;formulaire carte handicape;2
+17/01/2024;ts4;Animation d'ateliers collectifs;1
+18/01/2024;ts2;Une visite à domicile;1
+19/01/2024;ts3;remplir un formulaire carte handicape;1
+19/01/2024;ts2;aide temporaire;2
+19/01/2024;ts3;remplir un formulaire carte handicape;3
+22/01/2024;ts1;remplir un formulaire carte handicape;2
+23/01/2024;ts1;aide temporaire;1
+24/01/2024;ts3;remplir un formulaire carte handicape;2
+25/01/2024;ts2;Accueil et orientation;4
+26/01/2024;ts3;aide temporaire;1
+27/01/2024;ts3;aide temporaire;2
+28/01/2024;ts4;Animation d'ateliers collectifs;2
+29/01/2024;ts2;aide temporaire;2
+29/01/2024;ts3;Accueil et orientation;1
+29/01/2024;ts3;Une visite à domicile;1
+01/02/2024;ts4;Accueil et orientation;1
+02/02/2024;ts4;Une visite à domicile;1
+02/02/2024;ts3;Une visite à domicile;1
+03/02/2024;ts2;Animation d'ateliers collectifs;1
+03/02/2024;ts4;Animation d'ateliers collectifs;1
+    </pre>
+
+    <ol>
+        <li>Commencer par intégrer ces données dans une feuille Excel qu’on nomme tab_initial</li>
+        <li>Copier la feuille tab_initial une nouvelle feuille tab_initial(2) sera affiché</li>
+    </ol>
+
+    <h4>Partie 1 : Utilisation des Filtres</h4>
+    <p>Dans tab_initial(2) faire :</p>
+
+    <h5>Étape 1 : Appliquer un Filtre</h5>
+    <ol>
+        <li><strong>Sélectionnez les données :</strong></li>
+        <li><strong>Cliquez sur n'importe quelle cellule du tableau (par exemple, sur la cellule `A1`).</strong></li>
+        <li><strong>Ajouter des filtres :</strong></li>
+        <li>Allez dans l'onglet <strong>"Données"</strong>.</li>
+        <li>Cliquez sur <strong>"Filtrer"</strong>. Des petites flèches apparaissent dans les en-têtes de colonnes.</li>
+    </ol>
+
+    <h5>Étape 2 : Filtrer par Service</h5>
+    <ol>
+        <li><strong>Cliquez sur la flèche</strong> à côté de l'en-tête "service".</li>
+        <li><strong>Décochez tout</strong>, puis cochez uniquement la case <strong>"Une visite à domicile"</strong>.</li>
+        <li><strong>Cliquez sur "OK"</strong> pour appliquer le filtre.</li>
+        <li><strong>Résultat :</strong> Vous ne verrez que les lignes où le service est "Une visite à domicile".</li>
+        <li>Créer une nouvelle feuille nommée résultat : saisir « nombre des visites à domicile » = (le chiffre que vous avez trouvé)</li>
+    </ol>
+
+    <h5>Étape 4 : Filtrer par Travailleur Social (ts)</h5>
+    <ol>
+        <li><strong>Enlevez le filtre sur le service</strong> (Cliquez sur "Effacer le filtre").</li>
+        <li><strong>Cliquez sur la flèche</strong> à côté de l'en-tête "ts".</li>
+        <li><strong>Décochez tout</strong>, puis cochez uniquement la case <strong>"ts1"</strong>.</li>
+        <li><strong>Cliquez sur "OK"</strong> pour appliquer le filtre.</li>
+        <li><strong>Résultat :</strong> Vous ne verrez que les activités réalisées par `ts1`.</li>
+        <li>Dans la feuille nommée résultat : saisir « nombre des activités réalisées par ts1 » = (le chiffre que vous avez trouvé)</li>
+    </ol>
+
+    <h5>Étape 5 : Filtre Combiné (Service et Travailleur Social)</h5>
+    <ol>
+        <li><strong>Enlevez le filtre sur le travailleur social</strong> (Cliquez sur "Effacer le filtre").</li>
+        <li><strong>Cliquez sur la flèche</strong> à côté de l'en-tête "service".</li>
+        <li><strong>Décochez tout</strong>, puis cochez uniquement la case <strong>"Animation d'ateliers collectifs"</strong>.</li>
+        <li><strong>Cliquez sur la flèche</strong> à côté de l'en-tête "ts".</li>
+        <li><strong>Décochez tout</strong>, puis cochez uniquement la case <strong>"ts4"</strong>.</li>
+        <li><strong>Cliquez sur "OK"</strong> pour appliquer le filtre.</li>
+        <li><strong>Résultat :</strong> Vous ne verrez que les "Animations d'ateliers collectifs" réalisées par `ts4`.</li>
+        <li>Dans la feuille nommée résultat : saisir « nombre des Animations d'ateliers collectifs réalisées par ts4 » = (le chiffre que vous avez trouvé)</li>
+    </ol>
+
+    <h4>Partie 2 : Introduction aux Tableaux Croisés Dynamiques</h4>
+
+    <h5>Étape 1 : Créer un Tableau Croisé Dynamique (TCD)</h5>
+    <ol>
+        <li><strong>Sélectionner les données :</strong></li>
+        <li>Cliquez sur une cellule quelconque de votre tableau.</li>
+        <li>Allez dans l'onglet <strong>"Insertion"</strong> et cliquez sur <strong>"Tableau croisé dynamique"</strong>.</li>
+        <li>Une fenêtre apparaît. Assurez-vous que la plage de données est correcte et sélectionnez <strong>"Nouvelle feuille de calcul"</strong>.</li>
+        <li>Cliquez sur <strong>"OK"</strong>.</li>
+    </ol>
+    
+    <p>Synthèse 1 : lignes : services- valeurs :quantité </p>
+    <p>Synthèse 2 : lignes : TS - valeurs :quantité </p>
+    <p>Synthèse 1 : lignes : services- colonne : ts -valeurs :quantité</p>
+
+</body>
+</html>
