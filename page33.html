@@ -1,0 +1,81 @@
+<html><head><title></title>
+<script language="JavaScript">
+<!--
+
+var numQues = 3;
+var numChoi = 3;
+
+var answers = new Array(3);
+answers[0] = "الوثيقة و المهمة و المستعمل , ";
+answers[1] = "إضافة بيانات وصفية :موضوع، تواريخ، مراجع, ";
+answers[2] = "الوثيقة الواردة يتم رقمنتها و فهرستها و احالتها الى رئيس الادارة  , استدعاء موجه لمواطن للمثول اما اللجنة الجهوية للمعوقين يتم احداثه كوثيقة صادرة , المستخدم في عليسةبمكن أن يأخذ  دور : رئيس مصلحة و أو سكريتير و أو معاون , ";
+
+function getScore(form) {
+  var score = 0;
+  var currElt;
+  var currSelection;
+  var bon = false;
+
+  for (i=0; i<numQues; i++) {
+    currElt = i*numChoi;
+    bon=false;
+    for (j=0; j<numChoi; j++) {
+      currSelection = form.elements[currElt + j];
+      if ((currSelection.checked)&&(answers[i].indexOf(currSelection.value) != -1)) {
+        bon=true;}
+      if ((currSelection.checked)&&(answers[i].indexOf(currSelection.value) == -1)) {
+        bon=false;
+        break;
+        }
+      if (!(currSelection.checked)&&(answers[i].indexOf(currSelection.value) != -1)) {
+        bon=false;
+        break;
+        }
+    }
+    if (bon==true) {score++}
+  }
+
+  score = Math.round(score/numQues*100);
+  form.percentage.value = score + "%";
+
+  var correctAnswers = "";
+  for (i=1; i<=numQues; i++) {
+    correctAnswers += i + ". " + answers[i-1] + "\r\n";
+  }
+  form.solutions.value = correctAnswers;
+
+}
+
+// -->
+</script>
+</head>
+
+<body>
+
+<form name="quiz">
+<b>1. تعتمد منظومة عليسة على 3 مفاهيم أساسية و هي : </b><br>
+<input type="checkbox" name="q1" value="الوثيقة و الوعاء و المستعمل">الوثيقة و الوعاء و المستعمل<br>
+<input type="checkbox" name="q1" value="الوثيقة و المهمة و الوعاء">الوثيقة و المهمة و الوعاء<br>
+<input type="checkbox" name="q1" value="الوثيقة و المهمة و المستعمل ">الوثيقة و المهمة و المستعمل <br>
+<p>
+
+<b>2. فهرسة الوثيقة  في عليسة تعني : </b><br>
+<input type="checkbox" name="q2" value="رقمنتها">رقمنتها<br>
+<input type="checkbox" name="q2" value="إضافة بيانات وصفية :موضوع، تواريخ، مراجع">إضافة بيانات وصفية :موضوع، تواريخ، مراجع<br>
+<input type="checkbox" name="q2" value="تصنيفها بحيث تتم ارشفتها لاحقا">تصنيفها بحيث تتم ارشفتها لاحقا<br>
+<p>
+
+<b>3. أختار في ما يلي الجملة الصحيحة </b><br>
+<input type="checkbox" name="q3" value="الوثيقة الواردة يتم رقمنتها و فهرستها و احالتها الى رئيس الادارة  ">الوثيقة الواردة يتم رقمنتها و فهرستها و احالتها الى رئيس الادارة  <br>
+<input type="checkbox" name="q3" value="استدعاء موجه لمواطن للمثول اما اللجنة الجهوية للمعوقين يتم احداثه كوثيقة صادرة ">استدعاء موجه لمواطن للمثول اما اللجنة الجهوية للمعوقين يتم احداثه كوثيقة صادرة <br>
+<input type="checkbox" name="q3" value="المستخدم في عليسةبمكن أن يأخذ  دور : رئيس مصلحة و أو سكريتير و أو معاون ">المستخدم في عليسةبمكن أن يأخذ  دور : رئيس مصلحة و أو سكريتير و أو معاون <br>
+<p>
+
+<input type="button" value="Score" onClick="getScore(this.form)">
+<input type="reset" value="RAZ"><p>
+Score = <input type=text size=15 name="percentage"><br>
+Réponses correctes :<br>
+<textarea name="solutions" wrap="virtual" rows="4" cols="40"></textarea>
+</form>
+
+</body></html>
